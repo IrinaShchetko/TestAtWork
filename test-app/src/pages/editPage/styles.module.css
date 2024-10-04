@@ -1,0 +1,11 @@
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.backBtn {
+  display: flex;
+  gap: 8px;
+  font-size: 20px;
+  color: #595959;
+  margin-bottom: 24px;
+}

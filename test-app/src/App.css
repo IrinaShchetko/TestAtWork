@@ -1,0 +1,11 @@
+.App {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

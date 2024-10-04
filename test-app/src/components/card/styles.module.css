@@ -1,0 +1,54 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 360px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fdfdfd;
+  border-radius: 16px;
+  padding: 24px;
+  gap: 5px;
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 160px;
+  }
+}
+
+.avatar {
+  width: 112px;
+  height: 120px;
+  border-radius: 8px;
+}
+.info {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.name {
+  margin: 0;
+}
+.name {
+  font-size: 20px;
+  color: #03a9cd;
+}
+.company {
+  font-size: 16px;
+  color: #595959;
+  margin-top: 4px;
+}
+.city {
+  margin-top: 48px;
+  font-size: 14px;
+  color: #9c9c9c;
+}
+
+.button {
+  margin-left: auto;
+  position: relative;
+}
