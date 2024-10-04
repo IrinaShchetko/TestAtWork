@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { EditForm } from '../../components/editForm';
-import { PopUp } from '../../components/modal/Modal';
+import { PopUp } from '../../components/popUp/PopUp';
 import { Header } from '../../components/header';
 import styles from './styles.module.css';
 
