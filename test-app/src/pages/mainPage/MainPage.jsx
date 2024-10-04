@@ -75,7 +75,7 @@ export const MainPage = () => {
         </section>
 
         {/* Архивированные пользователи */}
-        <h2 className={styles.title}>Архивированные</h2>
+        <h2 className={styles.title}>Архив</h2>
         <section className={styles.archived}>
           {archivedUsers.map((user, index) => (
             <Card
