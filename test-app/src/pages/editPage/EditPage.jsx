@@ -67,7 +67,7 @@ export const EditPage = () => {
   return (
     <>
       <Header />
-      <div className={styles.container}>
+      <section className={styles.container}>
         <button className={styles.backBtn} onClick={handleBack}>
           <svg
             width="21"
@@ -106,7 +106,7 @@ export const EditPage = () => {
           onClose={() => setShowPopup(false)}
           message="Изменения сохранены!"
         />
-      </div>
+      </section>
     </>
   );
 };

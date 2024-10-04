@@ -1,23 +1,17 @@
 .container {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 0 40px;
 }
-
 .users,
 .archived {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
+
 .archived {
   filter: grayscale(100%);
-}
-@media (max-width: 768px) {
-  .users,
-  .archived {
-    gap: 5px;
-  }
 }
 
 .title {
@@ -35,4 +29,18 @@
   position: absolute;
   left: 0;
   bottom: -16px;
+}
+@media (max-width: 768px) {
+  .users,
+  .archived {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .users,
+  .archived {
+    grid-template-columns: 1fr;
+  }
 }

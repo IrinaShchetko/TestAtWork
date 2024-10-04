@@ -2,9 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  max-width: 360px;
-  width: 100%;
+  align-items: stretch;
   box-sizing: border-box;
   background-color: #fdfdfd;
   border-radius: 16px;
@@ -12,23 +10,25 @@
   position: relative;
 }
 
-@media (max-width: 480px) {
-  .card {
-    max-width: 160px;
-  }
-}
-
 .avatar {
-  width: 31%;
+  width: 120px;
   height: auto;
   border-radius: 8px;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.info {
+.additional {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
   padding: 0 20px;
+}
+.info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   flex: 1;
 }
 
@@ -45,12 +45,33 @@
 }
 
 .city {
-  margin-top: 48px;
   font-size: 14px;
   color: #9c9c9c;
 }
 
 .button {
   align-self: flex-start;
-  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .avatar {
+    width: 100%;
+    height: 120px;
+    max-width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  .additional {
+    gap: 10px;
+  }
+  .info {
+    padding: 0;
+  }
+
+  .avatar {
+    margin-bottom: 20px;
+  }
 }

@@ -11,7 +11,7 @@ export const EditForm = ({
   setShowPopup,
 }) => {
   return (
-    <section className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.main}>
         <img className={styles.avatar} src={photo} alt="Avatar" />
         <h3 className={styles.profile}>Данные профиля</h3>
@@ -103,6 +103,6 @@ export const EditForm = ({
           </div>
         )}
       </form>
-    </section>
+    </div>
   );
 };

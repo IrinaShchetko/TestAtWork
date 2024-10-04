@@ -1,6 +1,7 @@
 .container {
   max-width: 1160px;
   margin: 0 auto;
+  padding: 20px 0;
 }
 .backBtn {
   display: flex;
@@ -8,4 +9,9 @@
   font-size: 20px;
   color: #595959;
   margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 13px 16px;
+  }
 }
