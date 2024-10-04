@@ -11,8 +11,7 @@
   gap: 40px;
 }
 .archived {
-  background-color: grey;
-  z-index: 30;
+  filter: grayscale(100%);
 }
 @media (max-width: 768px) {
   .users,
