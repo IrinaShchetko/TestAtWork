@@ -1,27 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from '../../components/card';
+import { Header } from '../../components/header';
 import styles from './styles.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../../redux/users/thunk';
-import { useEffect } from 'react';
-import first from '../../assets/first.jpg';
-import cat from '../../assets/cat.jpg';
-import girl from '../../assets/girl.jpg';
 
-const avatars = [first, cat, girl, first, cat, girl];
 export const MainPage = () => {
-  //   const { category } = useParams()
-  //   const dispatch = useAppDispatch()
-
-  //   useEffect(() => {
-  //     dispatch(fetchGoodsThunk('all'))
-  //   }, [dispatch, category])
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { data, status, error } = useSelector((state) => state.fetch);
+  const [activeUsers, setActiveUsers] = useState([]);
+  const [archivedUsers, setArchivedUsers] = useState([]);
 
   useEffect(() => {
-    dispatch(fetchData()); // Вызов thunk для получения данных
+    dispatch(fetchData());
   }, [dispatch]);
+
+  useEffect(() => {
+    setActiveUsers(data);
+  }, [data]);
+
+  const handleEdit = (id) => {
+    navigate(`/edit/${id}`);
+  };
+
+  const handleArchive = (id) => {
+    const userToArchive = activeUsers.find((user) => user.id === id);
+    if (userToArchive) {
+      setActiveUsers(activeUsers.filter((user) => user.id !== id));
+      setArchivedUsers([...archivedUsers, userToArchive]);
+    }
+  };
+
+  const handleUnarchive = (id) => {
+    const userToUnarchive = archivedUsers.find((user) => user.id === id);
+    if (userToUnarchive) {
+      setArchivedUsers(archivedUsers.filter((user) => user.id !== id));
+      setActiveUsers([...activeUsers, userToUnarchive]);
+    }
+  };
+
+  const handleHide = (id) => {
+    setActiveUsers(activeUsers.filter((user) => user.id !== id));
+    setArchivedUsers(archivedUsers.filter((user) => user.id !== id));
+  };
 
   if (status === 'loading') {
     return <div>Loading...</div>;
@@ -32,13 +55,41 @@ export const MainPage = () => {
   }
 
   return (
-    <div className="container">
-      <section className={styles.users}>
-        <h1>Активные</h1>
-        {data.map((user, index) => (
-          <Card key={user.id} user={user} index={index} avatars={avatars} />
-        ))}
-      </section>
-    </div>
+    <>
+      <Header />
+      <div className={styles.container}>
+        {/* Активные пользователи */}
+        <h1 className={styles.title}>Активные</h1>
+        <section className={styles.users}>
+          {activeUsers.map((user, index) => (
+            <Card
+              key={user.id}
+              user={user}
+              index={index}
+              onEdit={() => handleEdit(user.id)}
+              onArchive={() => handleArchive(user.id)}
+              onHide={() => handleHide(user.id)}
+              archived={false}
+            />
+          ))}
+        </section>
+
+        {/* Архивированные пользователи */}
+        <h2 className={styles.title}>Архивированные</h2>
+        <section className={styles.archived}>
+          {archivedUsers.map((user, index) => (
+            <Card
+              key={user.id}
+              user={user}
+              index={index}
+              // onEdit={() => handleEdit(user.id)}
+              onArchive={() => handleUnarchive(user.id)}
+              // onHide={() => handleHide(user.id)}
+              archived={true}
+            />
+          ))}
+        </section>
+      </div>
+    </>
   );
 };

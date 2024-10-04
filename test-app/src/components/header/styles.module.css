@@ -1,0 +1,36 @@
+.header {
+  padding: 16px 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #f5f5f5; */
+  /* border-bottom: 1px solid #e0e0e0; */
+}
+.logo {
+  width: 150px;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.user,
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+}
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.nickname {
+  font-size: 16px;
+  color: #595959;
+}

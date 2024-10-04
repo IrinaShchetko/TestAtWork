@@ -10,7 +10,7 @@ export function App() {
       <BrowserRouter>
         <Routes>
           <Route path="*" element={<MainPage />} />
-          <Route path="edit" element={<EditPage />} />
+          <Route path="/edit/:id" element={<EditPage />} />
         </Routes>
       </BrowserRouter>
     </div>

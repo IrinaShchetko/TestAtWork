@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  gap: 40px;
+}
+.main,
+.additional {
+  background-color: #fdfdfd;
+  padding: 20px;
+  border: 1px solid red;
+  border-radius: 16px;
+}
+.main {
+  flex: 32%;
+}
+
+.additional {
+  flex: 61%;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.error {
+  color: red;
+}
