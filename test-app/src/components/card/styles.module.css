@@ -9,7 +9,6 @@
   background-color: #fdfdfd;
   border-radius: 16px;
   padding: 24px;
-  gap: 5px;
   position: relative;
 }
 
@@ -20,28 +19,31 @@
 }
 
 .avatar {
-  width: 112px;
-  height: 120px;
+  width: 31%;
+  height: auto;
   border-radius: 8px;
 }
+
 .info {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
 }
+
 .name {
   margin: 0;
-}
-.name {
   font-size: 20px;
   color: #03a9cd;
 }
+
 .company {
   font-size: 16px;
   color: #595959;
   margin-top: 4px;
 }
+
 .city {
   margin-top: 48px;
   font-size: 14px;
@@ -49,6 +51,6 @@
 }
 
 .button {
-  margin-left: auto;
-  position: relative;
+  align-self: flex-start;
+  margin-bottom: 10px;
 }

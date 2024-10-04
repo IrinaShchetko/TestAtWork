@@ -13,16 +13,18 @@ export const EditForm = ({
   return (
     <section className={styles.container}>
       <div className={styles.main}>
-        <img src={photo} alt="Avatar" />
-        <p>Данные профиля</p>
-        <p>Рабочее пространство</p>
-        <p>Приватность</p>
-        <p>Безопасность</p>
+        <img className={styles.avatar} src={photo} alt="Avatar" />
+        <h3 className={styles.profile}>Данные профиля</h3>
+        <p className={styles.item}>Рабочее пространство</p>
+        <p className={styles.item}>Приватность</p>
+        <p className={styles.item}>Безопасность</p>
       </div>
       <form className={styles.additional} onSubmit={handleSubmit}>
+        <h3 className={styles.title}>Данные профиля</h3>
         <div className={styles.formGroup}>
-          <label>Имя</label>
+          <label className={styles.label}>Имя</label>
           <input
+            className={styles.input}
             type="text"
             name="name"
             value={formData.name}
@@ -31,8 +33,9 @@ export const EditForm = ({
           />
         </div>
         <div className={styles.formGroup}>
-          <label>Никнейм</label>
+          <label className={styles.label}>Никнейм</label>
           <input
+            className={styles.input}
             type="text"
             name="username"
             value={formData.username}
@@ -41,8 +44,9 @@ export const EditForm = ({
           />
         </div>
         <div className={styles.formGroup}>
-          <label>Почта</label>
+          <label className={styles.label}>Почта</label>
           <input
+            className={styles.input}
             type="email"
             name="email"
             value={formData.email}
@@ -51,8 +55,9 @@ export const EditForm = ({
           />
         </div>
         <div className={styles.formGroup}>
-          <label>Город</label>
+          <label className={styles.label}>Город</label>
           <input
+            className={styles.input}
             type="text"
             name="city"
             value={formData.city}
@@ -61,8 +66,9 @@ export const EditForm = ({
           />
         </div>
         <div className={styles.formGroup}>
-          <label>Телефон</label>
+          <label className={styles.label}>Телефон</label>
           <input
+            className={styles.input}
             type="text"
             name="phone"
             value={formData.phone}
@@ -71,8 +77,9 @@ export const EditForm = ({
           />
         </div>
         <div className={styles.formGroup}>
-          <label>Company Name</label>
+          <label className={styles.label}>Company Name</label>
           <input
+            className={styles.input}
             type="text"
             name="companyName"
             value={formData.companyName}
@@ -81,7 +88,9 @@ export const EditForm = ({
           />
         </div>
 
-        <button type="submit">Сохранить</button>
+        <button className={styles.btn} type="submit">
+          Сохранить
+        </button>
 
         {!isValid && (
           <p className={styles.error}>Все поля должны быть заполнены</p>
